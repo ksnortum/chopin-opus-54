@@ -71,8 +71,8 @@ cantando = \markup \large \italic cantando
 %   "soto voce," \normal-text{ "2nd volta:" } forte } } }
 % }
 
-crescEdAccelSpanner = \makeSpanner \markup \large \italic \whiteout 
-  \pad-markup #0.25 "cresc. ed accel."
+edAccelSpanner = \makeSpanner \markup \large \italic \whiteout 
+  \pad-markup #0.25 "ed accel."
 
 %
 % Positions and shapes

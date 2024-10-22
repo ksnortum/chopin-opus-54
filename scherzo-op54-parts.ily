@@ -455,19 +455,20 @@ rightHandUpper = \relative {
   R2. |
   
   \barNumberCheck 345
-  \staffDown \voiceOne \acciaccatura { \slurDown fs8 } <b, a' b>4 \staffUp 
-    \oneVoice r r |
-  r4 r \staffDown \voiceOne cs'8 b |
-  <fs a b>4 r r |
+  \clef bass \acciaccatura { fs8 } <b, a' b>4 r r |
+  r4 r s |
+  <fs' a! b>4 r r |
   <gs b cs>4 r r |
-  \staffUp e'4( ds fs |
+  \clef treble e'4( ds fs |
   b4) \oneVoice r r |
   \voiceOne fs4( es gs |
   \oneVoice cs4) r r |
   
   \barNumberCheck 353
   \acciaccatura { cs,8 } <fs, e' fs>4-> r r |
-  r4 r gs'8 fs |
+  s2. |
+  <cs' e fs>4-> r r |
+  <d e gs>4-> r r |
 }
 
 rightHandLower = \relative {
@@ -1344,20 +1345,21 @@ leftHandLower = \relative {
   \clef bass fs,,,,4-. r r |
   
   \barNumberCheck 345
-  \voiceTwo ds'4 r r |
-  as'8^([ b cs b] 
-    << { \hideNoteHead cs' \hideNoteHead b) } \new Voice { r4 } >> |
-  <ds,, b'>4 r r |
+  ds'4 r r |
+  as'8^( b cs b 
+    << { \staffUp cs' b) } \new Voice { r4 } >> |
+  \staffDown <ds,, b'>4 r r |
   <e b'>4 r r |
-  fs2. | |
+  \voiceTwo fs2. | |
   \oneVoice b'4 r r |
   \voiceTwo gs,2. |
   \oneVoice cs'4 r r |
   
   \barNumberCheck 353
   <a,, a'>4 r r |
-  es''8([ fs gs fs] 
-    << { \staffUp \hideNoteHead gs' \hideNoteHead fs) } \new Voice { r4 } >> |
+  \voiceThree es''8( fs gs fs \staffUp gs' fs) |
+  \staffDown \oneVoice <a,, fs'>4-> r r |
+  <b gs'>4-> r r |
 }
 
 leftHand = {
@@ -1697,8 +1699,12 @@ dynamics = {
   s2. |
   
   \barNumberCheck 345
-  \crescEdAccelSpanner s2.\startTextSpan |
-  s2. * 7 |
+  \revert Staff.DynamicTextSpanner.style
+  s2.\cresc |
+  s2 s8 s\! |
+  \once \override TextSpanner.Y-offset = 0.5
+  \edAccelSpanner s2.\startTextSpan |
+  s2. * 5 |
   
   \barNumberCheck 353
   s2. * 3 |
