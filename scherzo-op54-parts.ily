@@ -1035,8 +1035,8 @@ rightHandUpper = \relative {
   
   \barNumberCheck 809
   <b, es gs>2._~( |
-  <b es a>2.~ |
-  \voiceOne <b gs'>4)_( \oneVoice a8)^( cs a' gs |
+  <b es a>2. |
+  \voiceOne gs'4) \oneVoice a,8^( cs a' gs |
   fs8 fss gs a as b |
   bs8 cs fss, gs e' ds |
   cs8 ds e es fs fss |
@@ -1055,8 +1055,8 @@ rightHandUpper = \relative {
   
   \barNumberCheck 825
   <cs fss as>2._~\( |
-  <cs fss b>2.~ |
-  <cs as'>4( b8) ds b' as |
+  <cs fss b>2. |
+  as'4 b,8 ds b' as |
   gs8 a as b bs cs |
   css8 ds as ds as' gs |
   fs8 gs as b bs cs |
@@ -1549,8 +1549,10 @@ rightHandLower = \relative {
   
   \barNumberCheck 809
   s2. |
-  \hideNoteHead es2.~ |
-  es2. |
+  << 
+    { \hideNoteHead es2.~ | es2. | } 
+    \new Voice { \voiceTwo \hideNoteHead b2.~ | b4( \hideNoteHead a8) } 
+  >>
   s2. * 5 |
   
   \barNumberCheck 817
@@ -1558,8 +1560,10 @@ rightHandLower = \relative {
   
   \barNumberCheck 825
   s2. |
-  \hideNoteHead fss~ |
-  fss2. |
+  << 
+    { \hideNoteHead fss'2.~ | fss2. | } 
+    \new Voice { \voiceTwo \hideNoteHead cs2.~ | cs4( \hideNoteHead b8) } 
+  >>
   
 }
 
