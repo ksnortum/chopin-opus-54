@@ -34,7 +34,7 @@
 \include "articulate.ly"
 
 \book {
-  \bookOutputName "polonaise-op54-no1"
+  \bookOutputName "scherzo-op54-no1"
   \score {
     \keepWithTag midi
     \articulate <<

@@ -26,10 +26,24 @@ makeSpanner =
 % perdendosi =
 %   #(make-music 'DecrescendoEvent 'span-direction START 'span-type 'text
 %                'span-text "perdendosi")
-% 
-% pocoCresc =
-%   #(make-music 'CrescendoEvent 'span-direction START 'span-type 'text
-%                'span-text "poco cresc.")
+
+pocoAPocoCrescMarkup = 
+  \markup \large \italic \whiteout \pad-markup #0.25 "poco a poco cresc."
+pocoAPocoCresc =
+  #(make-music 'CrescendoEvent 'span-direction START 'span-type 'text
+               'span-text pocoAPocoCrescMarkup)
+  
+crescEdAccelMarkup = 
+  \markup \large \italic \whiteout \pad-markup #0.25 "cresc. ed accel."
+crescEdAccel =
+  #(make-music 'CrescendoEvent 'span-direction START 'span-type 'text
+               'span-text crescEdAccelMarkup)
+  
+decrescEdAccelMarkup = 
+  \markup \large \italic \whiteout \pad-markup #0.25 "decresc. ed accel."
+decrescEdAccel =
+  #(make-music 'DecrescendoEvent 'span-direction START 'span-type 'text
+               'span-text decrescEdAccelMarkup)
 
 % ffz = #(make-dynamic-script "ffz")
 % rf = #(make-dynamic-script "rf")
@@ -57,8 +71,12 @@ hideNoteHead = \once {
 %
 
 ten = \markup \large \italic ten.
+riten = \markup \large \italic riten.
 leggiero = \markup \large \italic leggiero
 cantando = \markup \large \italic cantando
+piuLento = \markup \large \italic "più lento"
+stretto = \markup \large \italic \whiteout \pad-markup #0.25 stretto
+sostenuto = \markup \large \italic \whiteout \pad-markup #0.25 sostenuto
 % pocoRit = \markup \large \italic "poco rit."
 % aTempo = \markup \large \italic "a tempo"
 % piuF = \markup { \large più \dynamic f }
@@ -73,7 +91,41 @@ cantando = \markup \large \italic cantando
 
 edAccelSpanner = \makeSpanner \markup \large \italic \whiteout 
   \pad-markup #0.25 "ed accel."
+smorzSpanner = \makeSpanner \markup \large \italic smorz.
 
 %
 % Positions and shapes
 %
+
+arpeggioPositionsA = 
+  \tweak positions #'(-4 . 1) 
+  \tweak extra-spacing-width #'(-1.0 . 0)
+  \etc
+  
+arpeggioPositionsB = 
+  \tweak positions #'(-4 . 1) 
+  \tweak extra-spacing-width #'(-1.0 . 0)
+  \etc
+  
+arpeggioPositionsC = 
+  \tweak positions #'(-3 . 1) 
+  \tweak extra-spacing-width #'(-1.0 . 0)
+  \etc
+  
+arpeggioPositionsD = 
+  \tweak positions #'(-3 . 1) 
+  \tweak extra-spacing-width #'(-1.0 . 0)
+  \etc
+  
+arpeggioPositionsE = 
+  \tweak positions #'(-3 . 2) 
+  \tweak extra-spacing-width #'(-1.0 . 0)
+  \etc
+  
+arpeggioPositionsF = 
+  \tweak positions #'(-1 . 3) 
+  \tweak extra-spacing-width #'(-1.0 . 0)
+  \etc
+  
+rotateHairpinA = \once \override Hairpin.rotation = #'(8 -1 0)
+% rotateHairpinB = \once \override Hairpin.rotation = #'(15 -1 0)
