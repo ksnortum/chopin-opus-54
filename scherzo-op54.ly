@@ -6,7 +6,7 @@
 
 \score {
   \header {
-    title = "Scherzo"
+    title = "Scherzo No. 4"
     composer = "Frédéric Chopin"
     opus = "Opus 54"
   }
