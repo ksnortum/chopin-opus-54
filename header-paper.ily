@@ -57,7 +57,7 @@
 \layout {
   \context {
     \Score
-    % \omit BarNumber % TODO uncomment
+    \omit BarNumber
     \override Slur.details.free-head-distance = 0.75
   }
   \context {
@@ -73,14 +73,6 @@
 }
 
 \midi {
-%   \context {
-%     \Staff
-%     \consists "Dynamic_performer"
-%   }
-%   \context {
-%     \Voice
-%     \remove "Dynamic_performer"
-%   }        
   \context {
     \Score
     midiMinimumVolume = #0.20

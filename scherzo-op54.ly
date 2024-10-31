@@ -1,3 +1,4 @@
+%...+....1....+....2....+....3....+....4....+....5....+....6....+....7....+....
 \version "2.24.0"
 
 \include "header-paper.ily"
@@ -26,14 +27,11 @@
 
 \include "articulate.ly"
 
-\book {
-  \bookOutputName "scherzo-op54"
-  \score {
-    \keepWithTag midi
-    \articulate <<
-      \new Staff = "upper" << \rightHand \dynamics \pedal \tempi >>
-      \new Staff = "lower" << \leftHand \dynamics \pedal \tempi >>
-    >>
-    \midi {}
-  }
+\score {
+  \keepWithTag midi
+  \articulate <<
+    \new Staff = "upper" << \rightHand \dynamics \pedal \tempi >>
+    \new Staff = "lower" << \leftHand \dynamics \pedal \tempi >>
+  >>
+  \midi {}
 }
