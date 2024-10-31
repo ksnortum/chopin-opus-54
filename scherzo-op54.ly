@@ -3,13 +3,6 @@
 \include "header-paper.ily"
 \include "scherzo-op54-parts.ily"
 
-% TODO remove me
-\paper {
-  ragged-right = ##t
-  ragged-last-bottom = ##t
-  min-systems-per-page = 0
-}
-
 \score {
   \header {
     title = "Scherzo"
