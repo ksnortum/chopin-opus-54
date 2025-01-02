@@ -5,7 +5,7 @@
 % Scheme functions
 %
 
-% % ly:expect-warning only works to supress once.  This function allows
+% % ly:expect-warning only works to suppress once.  This function allows
 % % you to specify the number of times a warning appears.
 % #(define ly:expect-warning-times (lambda args
 %    (for-each (lambda _ (apply ly:expect-warning (cdr args)))
